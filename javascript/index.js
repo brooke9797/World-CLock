@@ -1,5 +1,4 @@
 function updateTime() {
-    // Los Angeles
     let losAngelesElement = document.querySelector("#los-angeles");
     if (losAngelesElement) {
       let losAngelesDateElement = losAngelesElement.querySelector(".date");
@@ -12,7 +11,6 @@ function updateTime() {
       );
     }
   
-    // Paris
     let parisElement = document.querySelector("#paris");
     if (parisElement) {
       let parisDateElement = parisElement.querySelector(".date");
@@ -21,6 +19,17 @@ function updateTime() {
   
       parisDateElement.innerHTML = parisTime.format("MMMM	Do YYYY");
       parisTimeElement.innerHTML = parisTime.format(
+        "h:mm:ss [<small>]A[</small>]"
+      );
+    }
+    let tokyoElement = document.querySelector("#Tokyo");
+    if (tokyoElement) {
+      let tokyoDateElement = tokyoElement.querySelector(".date");
+      let tokyoTimeElement = tokyoElement.querySelector(".time");
+      let tokyoTime = moment().tz("Asia/Tokyo");
+  
+      tokyoDateElement.innerHTML = tokyoTime.format("MMMM	Do YYYY");
+      tokyoTimeElement.innerHTML = tokyoTime.format(
         "h:mm:ss [<small>]A[</small>]"
       );
     }
